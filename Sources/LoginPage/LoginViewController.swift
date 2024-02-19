@@ -82,8 +82,12 @@ public class LoginViewController: UIViewController {
     
     
     private func configureViewUI() {
-        emailView.cornerRadius(radius: 10).borderWidth(width: 2).borderColor(color: .gray)
-        passwordView.cornerRadius(radius: 10).borderWidth(width: 2).borderColor(color: .gray)
+        emailView.cornerRadius(radius: 10)
+        emailView.borderWidth(width: 2)
+        emailView.borderColor(color: .gray)
+        passwordView.cornerRadius(radius: 10)
+        passwordView.borderWidth(width: 2)
+        passwordView.borderColor(color: .gray)
     }
     
     private func configureTFDelegate() {
@@ -123,21 +127,15 @@ extension LoginViewController: UITextFieldDelegate {
 
 
 extension UIView {
-    @discardableResult
-    func cornerRadius(radius: CGFloat) -> UIView {
+    func cornerRadius(radius: CGFloat) {
         self.layer.cornerRadius = radius
-        return self
     }
     
-    @discardableResult
-    func borderWidth(width: CGFloat) -> UIView {
+    func borderWidth(width: CGFloat) {
         self.layer.borderWidth = width
-        return self
     }
     
-    @discardableResult
-    func borderColor(color: UIColor) -> UIView {
+    func borderColor(color: UIColor) {
         self.layer.borderColor = color.cgColor
-        return self
     }
 }
