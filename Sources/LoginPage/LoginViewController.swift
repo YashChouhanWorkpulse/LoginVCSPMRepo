@@ -43,7 +43,7 @@ public class LoginViewController: UIViewController {
     private var viewModel: LoginViewModelProtocol
     private var passwordLimit: Int = 8
 
-    init(viewModel: LoginViewModelProtocol) {
+    public init(viewModel: LoginViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "LoginViewController", bundle: Bundle.module)
     }
