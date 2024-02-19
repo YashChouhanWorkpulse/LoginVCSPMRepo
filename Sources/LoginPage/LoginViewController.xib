@@ -31,7 +31,7 @@
                             <rect key="frame" x="4" y="4" width="353" height="60"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKa-dC-KQ6">
-                                    <rect key="frame" x="4" y="0.0" width="345" height="60"/>
+                                    <rect key="frame" x="8" y="0.0" width="337" height="60"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -40,9 +40,9 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="eKa-dC-KQ6" secondAttribute="trailing" constant="4" id="72l-q0-lvs"/>
+                                <constraint firstAttribute="trailing" secondItem="eKa-dC-KQ6" secondAttribute="trailing" constant="8" id="72l-q0-lvs"/>
                                 <constraint firstAttribute="height" constant="60" id="NKF-9l-fyB"/>
-                                <constraint firstItem="eKa-dC-KQ6" firstAttribute="leading" secondItem="fjB-ZH-fms" secondAttribute="leading" constant="4" id="OK4-1v-o5C"/>
+                                <constraint firstItem="eKa-dC-KQ6" firstAttribute="leading" secondItem="fjB-ZH-fms" secondAttribute="leading" constant="8" id="OK4-1v-o5C"/>
                                 <constraint firstAttribute="bottom" secondItem="eKa-dC-KQ6" secondAttribute="bottom" id="onb-L0-2Yv"/>
                                 <constraint firstItem="eKa-dC-KQ6" firstAttribute="top" secondItem="fjB-ZH-fms" secondAttribute="top" id="uAW-kf-NFF"/>
                             </constraints>
@@ -51,7 +51,7 @@
                             <rect key="frame" x="4" y="68" width="353" height="60"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4pO-8c-4K9">
-                                    <rect key="frame" x="4" y="0.0" width="345" height="60"/>
+                                    <rect key="frame" x="8" y="0.0" width="337" height="60"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -60,8 +60,8 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="4pO-8c-4K9" firstAttribute="leading" secondItem="kyv-Ik-Ogr" secondAttribute="leading" constant="4" id="Abe-HX-JSX"/>
-                                <constraint firstAttribute="trailing" secondItem="4pO-8c-4K9" secondAttribute="trailing" constant="4" id="NOp-HE-GaE"/>
+                                <constraint firstItem="4pO-8c-4K9" firstAttribute="leading" secondItem="kyv-Ik-Ogr" secondAttribute="leading" constant="8" id="Abe-HX-JSX"/>
+                                <constraint firstAttribute="trailing" secondItem="4pO-8c-4K9" secondAttribute="trailing" constant="8" id="NOp-HE-GaE"/>
                                 <constraint firstAttribute="bottom" secondItem="4pO-8c-4K9" secondAttribute="bottom" id="Ohx-NF-MvO"/>
                                 <constraint firstItem="4pO-8c-4K9" firstAttribute="top" secondItem="kyv-Ik-Ogr" secondAttribute="top" id="dsU-Du-0d0"/>
                                 <constraint firstAttribute="height" constant="60" id="kRX-SN-s2K"/>

@@ -25,6 +25,10 @@ public enum LoginError: Error {
 
 
 public protocol LoginViewModelProtocol {
+    var emailPlaceholder: String { get set }
+    var passwordPlaceholder: String { get set }
+    var emailPlaceholderColor: UIColor { get set }
+    var passwordPlaceholderColor: UIColor { get set }
     func setPasswordLimit() -> Int
     func isValid(email: String,password: String) -> LoginError?
     func loginTap(completion: @escaping (Result<Encodable, LoginError>) -> Void)
@@ -73,8 +77,10 @@ public class LoginViewController: UIViewController {
         viewModel.loginTap { [weak self] result in
             switch result {
             case let .success(model):
+                print("Success")
                 self?.viewModel.onSuccess(model: model)
             case let .failure(error):
+                print("Failed")
                 self?.alert(error: error)
                 self?.viewModel.onFailure()
             }
@@ -90,6 +96,10 @@ public class LoginViewController: UIViewController {
         passwordView.borderWidth(width: 2)
         passwordView.borderColor(color: .gray)
         logionButton.cornerRadius(radius: 10)
+        emailTextField.setPlaceholderText(viewModel.emailPlaceholder)
+        passwordTextField.setPlaceholderText(viewModel.passwordPlaceholder)
+        emailTextField.setPlaceholderColor(viewModel.emailPlaceholderColor)
+        passwordTextField.setPlaceholderColor(viewModel.passwordPlaceholderColor)
     }
     
     private func configureTFDelegate() {
@@ -139,5 +149,17 @@ extension UIView {
     
     func borderColor(color: UIColor) {
         self.layer.borderColor = color.cgColor
+    }
+}
+
+extension UITextField {
+    func setPlaceholderColor(_ color: UIColor) {
+        guard let placeholder = placeholder else { return }
+        let attributes = [NSAttributedString.Key.foregroundColor: color]
+        attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
+    }
+    
+    func setPlaceholderText(_ placeholder: String) {
+        attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [:])
     }
 }
