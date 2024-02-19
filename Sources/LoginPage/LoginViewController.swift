@@ -38,6 +38,7 @@ public class LoginViewController: UIViewController {
     @IBOutlet private weak var emailView: UIView!
     @IBOutlet private weak var passwordView: UIView!
     @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet weak var logionButton: UIButton!
     @IBOutlet private weak var passwordTextField: UITextField!
     
     private var viewModel: LoginViewModelProtocol
@@ -88,6 +89,7 @@ public class LoginViewController: UIViewController {
         passwordView.cornerRadius(radius: 10)
         passwordView.borderWidth(width: 2)
         passwordView.borderColor(color: .gray)
+        logionButton.cornerRadius(radius: 10)
     }
     
     private func configureTFDelegate() {
