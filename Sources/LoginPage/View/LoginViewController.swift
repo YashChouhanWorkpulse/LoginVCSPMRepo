@@ -16,8 +16,8 @@ public class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     
     private var loginViewModel: LoginViewModelProtocol
-    public var forgotController: ForgotPasswordViewController? = nil
-    public var registrationController: RegisatrationViewController? = nil
+    public var setupForgotController: (() -> ForgotPasswordViewController?)? = nil
+    public var setupRegistrationController: (() -> RegisatrationViewController?)? = nil
     private var passwordLimit: Int = 8
     
     public init(viewModel: LoginViewModelProtocol) {
@@ -82,11 +82,11 @@ extension LoginViewController {
     }
     
     @IBAction private func forgotPassword(_ sender: UIButton) {
-        goToController(controller: forgotController)
+        goToController(controller: setupForgotController?())
     }
     
     @IBAction private func registerNewUser(_ sender: UIButton) {
-        goToController(controller: registrationController)
+        goToController(controller: setupRegistrationController?())
     }
 }
 
