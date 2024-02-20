@@ -19,4 +19,10 @@ public extension UIViewController {
         alertVC.addAction(okAction)
         self.present(alertVC, animated: true)
     }
+    
+    func goToController(controller: UIViewController?) {
+        if let controller = controller {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
 }

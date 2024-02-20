@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ggm-fg-5qA">
-                    <rect key="frame" x="16" y="103" width="361" height="132"/>
+                    <rect key="frame" x="16" y="244" width="361" height="132"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjB-ZH-fms">
                             <rect key="frame" x="4" y="4" width="353" height="60"/>
@@ -80,7 +80,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgl-Fb-EP5">
-                    <rect key="frame" x="16" y="267" width="361" height="60"/>
+                    <rect key="frame" x="16" y="408" width="361" height="60"/>
                     <color key="backgroundColor" systemColor="tintColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="yWR-gC-5tY"/>
@@ -93,21 +93,51 @@
                         <action selector="loginButtonTap:" destination="-1" eventType="touchUpInside" id="vCt-G3-Rhs"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gLy-00-8D1">
+                    <rect key="frame" x="120" y="75.999999999999986" width="153" height="151.66666666666669"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="gLy-00-8D1" secondAttribute="height" id="tKe-X2-ORb"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaR-e5-gbo">
+                    <rect key="frame" x="195" y="492" width="182" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="create new account?"/>
+                    <connections>
+                        <action selector="registerNewUser:" destination="-1" eventType="touchUpInside" id="Bxx-ip-iPH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVw-79-kS3">
+                    <rect key="frame" x="16" y="492" width="156" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="forgot password?"/>
+                    <connections>
+                        <action selector="forgotPassword:" destination="-1" eventType="touchUpInside" id="yvC-eC-DiV"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="gLy-00-8D1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="6IU-sE-BRh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mgl-Fb-EP5" secondAttribute="trailing" constant="16" id="9sF-l9-ASN"/>
+                <constraint firstItem="QVw-79-kS3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="J3P-X2-8GY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KaR-e5-gbo" secondAttribute="trailing" constant="16" id="L8B-Iq-8qW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gLy-00-8D1" secondAttribute="trailing" constant="120" id="NSM-Fd-q2x"/>
                 <constraint firstItem="Ggm-fg-5qA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="QU1-Is-sSJ"/>
+                <constraint firstItem="gLy-00-8D1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="120" id="Zau-0M-eMb"/>
+                <constraint firstItem="KaR-e5-gbo" firstAttribute="top" secondItem="QVw-79-kS3" secondAttribute="top" id="d7O-OY-DaV"/>
                 <constraint firstItem="mgl-Fb-EP5" firstAttribute="top" secondItem="Ggm-fg-5qA" secondAttribute="bottom" constant="32" id="k9T-1R-U2z"/>
-                <constraint firstItem="Ggm-fg-5qA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="nt0-EV-9zA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ggm-fg-5qA" secondAttribute="trailing" constant="16" id="oBY-qi-e93"/>
                 <constraint firstItem="mgl-Fb-EP5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="oOz-2W-PZ2"/>
+                <constraint firstItem="QVw-79-kS3" firstAttribute="top" secondItem="mgl-Fb-EP5" secondAttribute="bottom" constant="24" id="q0N-7b-iIH"/>
+                <constraint firstItem="Ggm-fg-5qA" firstAttribute="top" secondItem="gLy-00-8D1" secondAttribute="bottom" constant="16" id="rZt-aJ-nFz"/>
             </constraints>
             <point key="canvasLocation" x="127" y="20"/>
         </view>
     </objects>
     <resources>
+        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

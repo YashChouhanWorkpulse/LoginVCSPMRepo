@@ -7,9 +7,9 @@
 
 import UIKit
 
-class RegisatrationViewController: UIViewController {
+public class RegisatrationViewController: UIViewController {
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

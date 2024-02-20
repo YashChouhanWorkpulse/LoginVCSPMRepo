@@ -7,6 +7,14 @@
 
 import UIKit
 
+public protocol SetupForgotControllerProtocol {
+    func getController() -> ForgotPasswordViewController?
+}
+
+public protocol SetupRegistrationControllerProtocol {
+    func getController() -> RegisatrationViewController?
+}
+
 public class LoginViewController: UIViewController {
     
     @IBOutlet private weak var emailView: UIView!
@@ -15,11 +23,13 @@ public class LoginViewController: UIViewController {
     @IBOutlet private weak var logionButton: UIButton!
     @IBOutlet private weak var passwordTextField: UITextField!
     
-    private var viewModel: LoginViewModelProtocol
+    private var loginViewModel: LoginViewModelProtocol
+    public var setupForgotControllerProtocol: SetupForgotControllerProtocol? = nil
+    public var setupRegistrationControllerProtocol: SetupRegistrationControllerProtocol? = nil
     private var passwordLimit: Int = 8
     
     public init(viewModel: LoginViewModelProtocol) {
-        self.viewModel = viewModel
+        self.loginViewModel = viewModel
         super.init(nibName: "LoginViewController", bundle: Bundle.module)
     }
     
@@ -35,7 +45,7 @@ public class LoginViewController: UIViewController {
 
 extension LoginViewController {
     private func configure() {
-        passwordLimit = viewModel.setPasswordLimit()
+        passwordLimit = loginViewModel.setPasswordLimit()
         configureViewUI()
         configureTFDelegate()
     }
@@ -48,10 +58,10 @@ extension LoginViewController {
         passwordView.borderWidth(width: 2)
         passwordView.borderColor(color: .gray)
         logionButton.cornerRadius(radius: 10)
-        emailTextField.setPlaceholderText(viewModel.emailPlaceholder)
-        passwordTextField.setPlaceholderText(viewModel.passwordPlaceholder)
-        emailTextField.setPlaceholderColor(viewModel.emailPlaceholderColor)
-        passwordTextField.setPlaceholderColor(viewModel.passwordPlaceholderColor)
+        emailTextField.setPlaceholderText(loginViewModel.emailPlaceholder)
+        passwordTextField.setPlaceholderText(loginViewModel.passwordPlaceholder)
+        emailTextField.setPlaceholderColor(loginViewModel.emailPlaceholderColor)
+        passwordTextField.setPlaceholderColor(loginViewModel.passwordPlaceholderColor)
     }
     
     private func configureTFDelegate() {
@@ -62,21 +72,31 @@ extension LoginViewController {
 
 extension LoginViewController {
     @IBAction private func loginButtonTap(_ sender: UIButton) {
-        if let error = viewModel.isValid(email: emailTextField.text ?? "", password: passwordTextField.text ?? "") {
+        if let error = loginViewModel.isValid(email: emailTextField.text ?? "", password: passwordTextField.text ?? "") {
             alert(error: error)
             return
         }
-        viewModel.loginTap { [weak self] result in
+        loginViewModel.loginTap { [weak self] result in
             switch result {
             case let .success(model):
                 print("Success")
-                self?.viewModel.onSuccess(model: model)
+                self?.loginViewModel.onSuccess(model: model)
             case let .failure(error):
                 print("Failed")
                 self?.alert(error: error)
-                self?.viewModel.onFailure()
+                self?.loginViewModel.onFailure()
             }
         }
+    }
+    
+    @IBAction func forgotPassword(_ sender: UIButton) {
+        let forgotViewController = setupForgotControllerProtocol?.getController()
+        goToController(controller: forgotViewController)
+    }
+    
+    @IBAction func registerNewUser(_ sender: UIButton) {
+        let registrationViewController = setupRegistrationControllerProtocol?.getController()
+        goToController(controller: registrationViewController)
     }
 }
 
@@ -105,6 +125,5 @@ extension LoginViewController: UITextFieldDelegate {
             break
         }
         return true
-        
     }
 }
