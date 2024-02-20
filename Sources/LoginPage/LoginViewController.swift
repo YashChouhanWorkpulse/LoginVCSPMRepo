@@ -15,7 +15,18 @@ public enum LoginError: Error {
     case customO(String)
     
     var message: String {
-        return ""
+        switch self {
+        case .emptyPassword:
+            return "Password is empty"
+        case .emaptyEmail:
+            return "email is empty"
+        case .invalidPassword:
+            return "invalid password"
+        case .invalidEmail:
+            return "invalid email"
+        case .customO(let message):
+            return message
+        }
     }
     
     var title: String {
