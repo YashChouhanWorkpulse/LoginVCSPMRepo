@@ -25,4 +25,8 @@ public extension UIViewController {
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }
+    
+    func goBack() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

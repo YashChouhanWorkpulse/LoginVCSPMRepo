@@ -28,6 +28,18 @@ public class RegisatrationViewController: UIViewController {
 
 extension RegisatrationViewController {
     @IBAction private func backButtonTapped(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
+    @IBAction private func registerNewUser(_ sender: UIButton) {
+
+    }
+    
+    @IBAction private func loginButtonTap(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction private func forgotPassword(_ sender: UIButton) {
+
     }
 }
