@@ -58,18 +58,6 @@ extension LoginViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
-    
-    private func alert(error: LoginError) {
-        let alertVC = UIAlertController(title: error.title,
-                                        message: error.message,
-                                        preferredStyle: .alert)
-        let okAction = UIAlertAction.init(title: "Ok", style: .default) { _ in
-            
-        }
-        alertVC.addAction(okAction)
-        self.present(alertVC, animated: true)
-    }
-    
 }
 
 extension LoginViewController {
