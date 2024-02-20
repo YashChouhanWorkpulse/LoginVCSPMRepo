@@ -26,7 +26,7 @@ public class RegisatrationViewController: UIViewController {
 
 }
 
-extension ForgotPasswordViewController {
+extension RegisatrationViewController {
     @IBAction private func backButtonTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
