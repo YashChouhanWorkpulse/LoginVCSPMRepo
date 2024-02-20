@@ -47,7 +47,7 @@ public class LoginViewController: UIViewController {
     
     private var viewModel: LoginViewModelProtocol
     private var passwordLimit: Int = 8
-
+    
     public init(viewModel: LoginViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: "LoginViewController", bundle: Bundle.module)
@@ -132,6 +132,20 @@ extension LoginViewController: UITextFieldDelegate {
         }
         let newLength = currentCharacterCount + string.count - range.length
         return newLength <= passwordLimit
+    }
+    
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            emailTextField.becomeFirstResponder()
+        default:
+            break
+        }
+        return true
+        
     }
 }
 
