@@ -69,8 +69,8 @@ extension ForgotPasswordViewController {
         forgotTextField.setPlaceholderText(viewModel.emailPlaceholder)
         forgotTextField.setPlaceholderColor(viewModel.emailPlaceholderColor)
         logoImageView.cornerRadius(radius: logoImageView.frame.width * 0.5)
-        logoImageView.tintColor = .white
-        logoImageView.backgroundColor = UIColor.systemBlue
+      //  logoImageView.tintColor = .white
+      //  logoImageView.backgroundColor = UIColor.systemBlue
     }
     
     private func configureTFDelegate() {

@@ -18,7 +18,6 @@ public class LoginViewController: UIViewController {
     private var loginViewModel: LoginViewModelProtocol
     public var setupForgotController: (() -> ForgotPasswordViewController?)? = nil
     public var setupRegistrationController: (() -> RegisatrationViewController?)? = nil
-    private var passwordLimit: Int = 8
     
     public init(viewModel: LoginViewModelProtocol) {
         self.loginViewModel = viewModel
@@ -37,7 +36,6 @@ public class LoginViewController: UIViewController {
 
 extension LoginViewController {
     private func configure() {
-        passwordLimit = loginViewModel.setPasswordLimit()
         configureViewUI()
         configureTFDelegate()
     }
@@ -101,7 +99,7 @@ extension LoginViewController: UITextFieldDelegate {
             return false
         }
         let newLength = currentCharacterCount + string.count - range.length
-        return newLength <= passwordLimit
+        return newLength <= loginViewModel.setPasswordLimit()
     }
     
     
