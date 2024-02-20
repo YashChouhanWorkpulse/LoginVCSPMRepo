@@ -7,14 +7,6 @@
 
 import UIKit
 
-public protocol SetupForgotControllerProtocol {
-    func getController() -> ForgotPasswordViewController?
-}
-
-public protocol SetupRegistrationControllerProtocol {
-    func getController() -> RegisatrationViewController?
-}
-
 public class LoginViewController: UIViewController {
     
     @IBOutlet private weak var emailView: UIView!
@@ -24,8 +16,8 @@ public class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     
     private var loginViewModel: LoginViewModelProtocol
-    public var setupForgotControllerProtocol: SetupForgotControllerProtocol? = nil
-    public var setupRegistrationControllerProtocol: SetupRegistrationControllerProtocol? = nil
+    public var forgotController: ForgotPasswordViewController? = nil
+    public var registrationController: RegisatrationViewController? = nil
     private var passwordLimit: Int = 8
     
     public init(viewModel: LoginViewModelProtocol) {
@@ -89,14 +81,12 @@ extension LoginViewController {
         }
     }
     
-    @IBAction func forgotPassword(_ sender: UIButton) {
-        let forgotViewController = setupForgotControllerProtocol?.getController()
-        goToController(controller: forgotViewController)
+    @IBAction private func forgotPassword(_ sender: UIButton) {
+        goToController(controller: forgotController)
     }
     
-    @IBAction func registerNewUser(_ sender: UIButton) {
-        let registrationViewController = setupRegistrationControllerProtocol?.getController()
-        goToController(controller: registrationViewController)
+    @IBAction private func registerNewUser(_ sender: UIButton) {
+        goToController(controller: registrationController)
     }
 }
 
