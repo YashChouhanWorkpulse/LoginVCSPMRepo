@@ -40,7 +40,6 @@
                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="jE3-Ds-Zr5"/>
                                 <action selector="backButtonTapped:" destination="-2" eventType="touchUpInside" id="yaO-rB-Ojr"/>
                             </connections>
                         </button>
