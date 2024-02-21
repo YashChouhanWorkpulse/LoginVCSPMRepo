@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  RegistrationError.swift
 //  
 //
 //  Created by Yash Chouhan on 21/02/24.
