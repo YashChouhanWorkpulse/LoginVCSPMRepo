@@ -40,7 +40,21 @@ extension RegisatrationViewController {
     }
     
     @IBAction private func registerNewUser(_ sender: UIButton) {
-        
+        if let error = registrationViewModel.isValid(email: emailTextField.text ?? "", password: passwordTextField.text ?? "") {
+            alert(error: error)
+            return
+        }
+        registrationViewModel.registractionTap { [weak self] result in
+            switch result {
+            case let .success(model):
+                print("Success")
+                self?.registrationViewModel.onSuccess(model: model)
+            case let .failure(error):
+                print("Failed")
+                self?.alert(error: error)
+                self?.registrationViewModel.onFailure()
+            }
+        }
     }
     
     @IBAction private func loginButtonTap(_ sender: UIButton) {
