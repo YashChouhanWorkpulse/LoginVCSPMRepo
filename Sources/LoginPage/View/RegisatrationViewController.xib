@@ -11,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisatrationViewController" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="mPS-hr-SW9" id="RAQ-Ih-rDM"/>
+                <outlet property="emailView" destination="Yhb-LI-iBb" id="64H-V3-IWt"/>
+                <outlet property="passwordTextField" destination="svv-GL-5XK" id="5aG-ko-DC9"/>
+                <outlet property="passwordView" destination="FKA-7r-rr9" id="YBn-xu-Bg6"/>
+                <outlet property="registrationButton" destination="5d3-hG-Zvr" id="fvf-7q-8RN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

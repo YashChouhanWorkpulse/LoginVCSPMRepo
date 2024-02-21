@@ -27,6 +27,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NbK-c8-FpT">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="111"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tf2-Ql-C0b">
+                            <rect key="frame" x="16" y="59" width="80" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="ec2-6L-4zy"/>
+                                <constraint firstAttribute="width" constant="80" id="yn1-SF-5MN"/>
+                            </constraints>
+                            <inset key="titleEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system" title="Back">
+                                <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPM LOGIN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlX-Eh-BAw">
                             <rect key="frame" x="132" y="59" width="129.33333333333337" height="44"/>
                             <constraints>
@@ -40,7 +53,9 @@
                     <color key="backgroundColor" systemColor="tintColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="rlX-Eh-BAw" secondAttribute="bottom" constant="8" id="Mh2-MH-lIa"/>
+                        <constraint firstItem="Tf2-Ql-C0b" firstAttribute="leading" secondItem="NbK-c8-FpT" secondAttribute="leading" constant="16" id="gGg-xA-UAh"/>
                         <constraint firstItem="rlX-Eh-BAw" firstAttribute="centerX" secondItem="NbK-c8-FpT" secondAttribute="centerX" id="ktR-Up-Ct3"/>
+                        <constraint firstAttribute="bottom" secondItem="Tf2-Ql-C0b" secondAttribute="bottom" constant="8" id="mp7-Zf-pPD"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5K-lj-8EY">
@@ -173,6 +188,7 @@
         </view>
     </objects>
     <resources>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

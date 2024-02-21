@@ -61,6 +61,11 @@ extension LoginViewController {
 }
 
 extension LoginViewController {
+    
+    @IBAction private func backButtonTapped(_ sender: UIButton) {
+        goBack()
+    }
+    
     @IBAction private func loginButtonTap(_ sender: UIButton) {
         if let error = loginViewModel.isValid(email: emailTextField.text ?? "", password: passwordTextField.text ?? "") {
             alert(error: error)
